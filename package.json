@@ -27,8 +27,9 @@
   ],
   "dependencies": {
     "@types/node": "^6.0.55",
-    "raml-typesystem-scopes": "0.0.21",
-    "raml-typesystem-shapes": "0.0.21",
-    "raml1-domain-model": "^0.0.18"
+    "callables-rpc-views": "0.0.21",
+    "raml-typesystem-scopes": "0.0.22",
+    "raml-typesystem-shapes": "0.0.22",
+    "raml1-domain-model": "^0.0.22"
   }
 }
