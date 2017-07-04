@@ -102,9 +102,9 @@ Of course if you as human will look on the repos endpoint definition you will pr
 iterates over organisation repositories, but the machines need more formal descriptions to operate on.
 
 
-### The goals of callable graph project:
+### The goals of RAML graph project:
 
-We define goals of the callable graph project as follows:
+We define goals of the RAML graph project as follows:
  
  * Provide a set of RAML annotations which allows to enhance API description with
 enough of  metadata to allow machines restore information about relationships between resources, operations.
