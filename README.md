@@ -52,7 +52,32 @@ will be never as rich and fluent as it may be done if we can make use of this in
 
 ##### Examples:
 
-One typical example of this is collections. We usually expose them as an endpoints which returns an array of entities
+```raml
+/orgs
+  /{orgId}:
+    /{repoId}:
+      /issues:
+        /{issueId}
+          /get:
+            responses: 
+              body: Issue
+```
+
+```javascript
+function getIssue(repo,issueId){
+  return gitHub.orgs.org(repo.org.name).repos.repo(repo.name).issues.issue(issueId).get();
+}
+```
+However if the cient generator will be able to make use of the information that `orgId` and `repoId` may be calculated
+from a Repository object the same call may look as simple as:
+
+```javascript
+function getIssue(repo,issueId){
+  repo.issue(issueId).get();
+}
+```
+
+Another typical example of this is collections. We usually expose them as an endpoints which returns an array of entities
 and provides some parameters which might be used to iterate through the collection of resources. For example one may 
 expose collection of `repositories` with the following RAML snippet.
 
