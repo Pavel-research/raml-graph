@@ -56,7 +56,7 @@ One typical example of this is collections. We usually expose them as an endpoin
 and provides some parameters which might be used to iterate through the collection of resources. For example one may 
 expose collection of `repositories` with the following RAML snippet.
 
-```
+```raml
 /orgs/{orgId}/repos:
    get:
      queryParameters:
