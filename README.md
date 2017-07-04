@@ -107,8 +107,7 @@ iterates over organisation repositories, but the machines need more formal descr
 We define goals of the callable graph project as follows:
  
  * Provide a set of RAML annotations which allows to enhance API description with
-a metadata which will allow machines to restore information about relationships between resources, operations, 
-different representation of the resources.
+enough of  metadata to allow machines restore information about relationships between resources, operations.
  * Provide a tool which restores representation of the API as a graph of resources and operations on top of them.
  * Provide an example client generator which makes use of this information to generate better clients.
 
