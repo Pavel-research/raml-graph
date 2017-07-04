@@ -52,6 +52,17 @@ will be never as rich and fluent as it may be done if we can make use of this in
 
 ##### Examples:
 
+Let's imagine that we have an Repository object which is defined with the following raml type:
+
+```raml
+Repository:
+  properties:
+    org: Organization
+    name: string    
+```
+
+and the endpoint which allows you to get an `Issue` by providing organization name , repo name and issue number as url parameters.
+
 ```raml
 /orgs
   /{orgId}:
@@ -63,13 +74,15 @@ will be never as rich and fluent as it may be done if we can make use of this in
               body: Issue
 ```
 
+With a current client generators typical function which returns an issue by its id and repository object will look like:
+
 ```javascript
 function getIssue(repo,issueId){
   return gitHub.orgs.org(repo.org.name).repos.repo(repo.name).issues.issue(issueId).get();
 }
 ```
-However if the cient generator will be able to make use of the information that `orgId` and `repoId` may be calculated
-from a Repository object the same call may look as simple as:
+However if the client generator will be able to make use of the information that `orgId` and `repoId` may be calculated
+from a Repository object and that `issue` is a subresource of the `repository`, the same call may look as simple as:
 
 ```javascript
 function getIssue(repo,issueId){
