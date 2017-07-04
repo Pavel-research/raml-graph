@@ -96,7 +96,10 @@ org.repos.forEach(function (repo){
 })
 ```
 
-It it is code generator problem, unfortunately it is not. Actual problem is that formal API descriptions just does not contain enough of information to understand that repositories endpoint is a collection and to generate code to iterate through it automatically.
+Is it code generator problem? Unfortunately it is not. Actual problem is that formal API descriptions just does not contain enough of information to understand that repositories endpoint is a collection and to generate code to iterate through it automatically. 
+
+Of course if you as human will look on the repos endpoint definition you will probably able to guess how to write code which
+iterates over organisation repositories, but the machines need more formal descriptions to operate on.
 
 
 ### The goals of callable graph project:
