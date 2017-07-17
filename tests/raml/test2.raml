@@ -1,5 +1,7 @@
 #%RAML 1.0
 title: Hello
+uses:
+ s: shapes.raml
 mediaType: application/json
 types:
   Repository:
@@ -7,11 +9,15 @@ types:
       id: integer
       name: string
       lastName: string
-
+  RepositoryData:
+     (s.shapeOf): Repository
+     properties:
+       id: integer
+       name: string
 /repositories:
   get:
    responses:
      200:
-      body: Repository[]
+      body: RepositoryData[]
   post:
     body: Repository

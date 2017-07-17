@@ -1,0 +1,37 @@
+#%RAML 1.0
+title: Hello
+uses:
+ s: shapes.raml
+mediaType: application/json
+types:
+  Organization:
+     properties:
+       id: string
+       name: string
+  Repository:
+    properties:
+      id: integer
+      name: string
+      lastName: string
+      org: Organization
+      org2: Organization
+  RepositoryData:
+     (s.shapeOf): Repository
+     properties:
+       id: integer
+       name: string
+/repositories:
+  /orgs:
+    /{orgId}:
+     uriParameters:
+       orgId:
+        (s.reference): Organization.id
+     /repo:
+        /{repoId}:
+           uriParameters:
+               repoId:
+                (s.reference): Repository.id
+           get:
+             responses:
+               200:
+                 body: Repository
