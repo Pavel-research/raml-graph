@@ -299,6 +299,7 @@ function canCompute(t1: domain.Type, t2: domain.Type): boolean {
 export interface ObjectModule extends views.Module {
 
     entities(): Entity[];
+
 }
 
 
